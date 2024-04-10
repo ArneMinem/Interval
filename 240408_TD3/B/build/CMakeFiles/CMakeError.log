@@ -1,0 +1,45 @@
+Performing C++ SOURCE FILE Test COMPILER_SUPPORTS_FFP_MODE_FULL failed with the following output:
+Change Dir: /home/arne/interval/240408_TD3/B/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_149be/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_149be.dir/build.make CMakeFiles/cmTC_149be.dir/build
+gmake[1]: Entering directory '/home/arne/interval/240408_TD3/B/build/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_149be.dir/src.cxx.o
+/usr/bin/c++ -DCOMPILER_SUPPORTS_FFP_MODE_FULL  -frounding-math -ffloat-store -fno-fast-math -ffp-contract=off    -ffp-mode=full -std=gnu++17 -o CMakeFiles/cmTC_149be.dir/src.cxx.o -c /home/arne/interval/240408_TD3/B/build/CMakeFiles/CMakeTmp/src.cxx
+c++: error: unrecognized command-line option '-ffp-mode=full'
+gmake[1]: *** [CMakeFiles/cmTC_149be.dir/build.make:78: CMakeFiles/cmTC_149be.dir/src.cxx.o] Error 1
+gmake[1]: Leaving directory '/home/arne/interval/240408_TD3/B/build/CMakeFiles/CMakeTmp'
+gmake: *** [Makefile:127: cmTC_149be/fast] Error 2
+
+
+Source file was:
+int main() { return 0; }
+Performing C++ SOURCE FILE Test COMPILER_SUPPORTS_FP_MODEL_STRICT failed with the following output:
+Change Dir: /home/arne/interval/240408_TD3/B/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_29479/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_29479.dir/build.make CMakeFiles/cmTC_29479.dir/build
+gmake[1]: Entering directory '/home/arne/interval/240408_TD3/B/build/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_29479.dir/src.cxx.o
+/usr/bin/c++ -DCOMPILER_SUPPORTS_FP_MODEL_STRICT  -frounding-math -ffloat-store -fno-fast-math -ffp-contract=off    -fp-model=strict -std=gnu++17 -o CMakeFiles/cmTC_29479.dir/src.cxx.o -c /home/arne/interval/240408_TD3/B/build/CMakeFiles/CMakeTmp/src.cxx
+c++: error: unrecognized command-line option '-fp-model=strict'
+gmake[1]: *** [CMakeFiles/cmTC_29479.dir/build.make:78: CMakeFiles/cmTC_29479.dir/src.cxx.o] Error 1
+gmake[1]: Leaving directory '/home/arne/interval/240408_TD3/B/build/CMakeFiles/CMakeTmp'
+gmake: *** [Makefile:127: cmTC_29479/fast] Error 2
+
+
+Source file was:
+int main() { return 0; }
+Performing C++ SOURCE FILE Test COMPILER_SUPPORTS_FP_STRICT failed with the following output:
+Change Dir: /home/arne/interval/240408_TD3/B/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_58fbf/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_58fbf.dir/build.make CMakeFiles/cmTC_58fbf.dir/build
+gmake[1]: Entering directory '/home/arne/interval/240408_TD3/B/build/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_58fbf.dir/src.cxx.o
+/usr/bin/c++ -DCOMPILER_SUPPORTS_FP_STRICT  -frounding-math -ffloat-store -fno-fast-math -ffp-contract=off    -fp:strict -std=gnu++17 -o CMakeFiles/cmTC_58fbf.dir/src.cxx.o -c /home/arne/interval/240408_TD3/B/build/CMakeFiles/CMakeTmp/src.cxx
+c++: error: unrecognized command-line option '-fp:strict'; did you mean '-Wrestrict'?
+gmake[1]: *** [CMakeFiles/cmTC_58fbf.dir/build.make:78: CMakeFiles/cmTC_58fbf.dir/src.cxx.o] Error 1
+gmake[1]: Leaving directory '/home/arne/interval/240408_TD3/B/build/CMakeFiles/CMakeTmp'
+gmake: *** [Makefile:127: cmTC_58fbf/fast] Error 2
+
+
+Source file was:
+int main() { return 0; }

@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Start a C++ project — codac 1.5.5 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="Start%20a%20C++%20project%20%E2%80%94%20codac%201.5.5%20documentation_files/theme.css" type="text/css">
+  <link rel="stylesheet" href="Start%20a%20C++%20project%20%E2%80%94%20codac%201.5.5%20documentation_files/pygments.css" type="text/css">
+  <link rel="stylesheet" href="Start%20a%20C++%20project%20%E2%80%94%20codac%201.5.5%20documentation_files/custom-sphinx.css" type="text/css">
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="Start%20a%20C++%20project%20%E2%80%94%20codac%201.5.5%20documentation_files/documentation_options.js"></script>
+        <script src="Start%20a%20C++%20project%20%E2%80%94%20codac%201.5.5%20documentation_files/jquery.js"></script>
+        <script src="Start%20a%20C++%20project%20%E2%80%94%20codac%201.5.5%20documentation_files/underscore.js"></script>
+        <script src="Start%20a%20C++%20project%20%E2%80%94%20codac%201.5.5%20documentation_files/doctools.js"></script>
+        <script src="Start%20a%20C++%20project%20%E2%80%94%20codac%201.5.5%20documentation_files/language_data.js"></script>
+        <script async="async" src="Start%20a%20C++%20project%20%E2%80%94%20codac%201.5.5%20documentation_files/mathjax_stmaryrd.js"></script>
+    
+    <script type="text/javascript" src="Start%20a%20C++%20project%20%E2%80%94%20codac%201.5.5%20documentation_files/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="http://codac.io/genindex.html">
+    <link rel="search" title="Search" href="http://codac.io/search.html">
+    <link rel="next" title="Introduction" href="http://codac.io/manual/01-introduction/index.html">
+    <link rel="prev" title="Start a Python project" href="http://codac.io/install/02-start-py-project.html"> 
+<script src="Start%20a%20C++%20project%20%E2%80%94%20codac%201.5.5%20documentation_files/MathJax.js" id=""></script><style type="text/css">.MathJax_Preview {color: #888}
+#MathJax_Message {position: fixed; left: 1px; bottom: 2px; background-color: #E6E6E6; border: 1px solid #959595; margin: 0px; padding: 2px 8px; z-index: 102; color: black; font-size: 80%; width: auto; white-space: nowrap}
+#MathJax_MSIE_Frame {position: absolute; top: 0; left: 0; width: 0px; z-index: 101; border: 0px; margin: 0px; padding: 0px}
+.MathJax_Error {color: #CC0000; font-style: italic}
+</style><style type="text/css">#MathJax_About {position: fixed; left: 50%; width: auto; text-align: center; border: 3px outset; padding: 1em 2em; background-color: #DDDDDD; color: black; cursor: default; font-family: message-box; font-size: 120%; font-style: normal; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; z-index: 201; border-radius: 15px; -webkit-border-radius: 15px; -moz-border-radius: 15px; -khtml-border-radius: 15px; box-shadow: 0px 10px 20px #808080; -webkit-box-shadow: 0px 10px 20px #808080; -moz-box-shadow: 0px 10px 20px #808080; -khtml-box-shadow: 0px 10px 20px #808080; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+#MathJax_About.MathJax_MousePost {outline: none}
+.MathJax_Menu {position: absolute; background-color: white; color: black; width: auto; padding: 5px 0px; border: 1px solid #CCCCCC; margin: 0; cursor: default; font: menu; text-align: left; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; z-index: 201; border-radius: 5px; -webkit-border-radius: 5px; -moz-border-radius: 5px; -khtml-border-radius: 5px; box-shadow: 0px 10px 20px #808080; -webkit-box-shadow: 0px 10px 20px #808080; -moz-box-shadow: 0px 10px 20px #808080; -khtml-box-shadow: 0px 10px 20px #808080; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+.MathJax_MenuItem {padding: 1px 2em; background: transparent}
+.MathJax_MenuArrow {position: absolute; right: .5em; padding-top: .25em; color: #666666; font-size: .75em}
+.MathJax_MenuActive .MathJax_MenuArrow {color: white}
+.MathJax_MenuArrow.RTL {left: .5em; right: auto}
+.MathJax_MenuCheck {position: absolute; left: .7em}
+.MathJax_MenuCheck.RTL {right: .7em; left: auto}
+.MathJax_MenuRadioCheck {position: absolute; left: .7em}
+.MathJax_MenuRadioCheck.RTL {right: .7em; left: auto}
+.MathJax_MenuLabel {padding: 1px 2em 3px 1.33em; font-style: italic}
+.MathJax_MenuRule {border-top: 1px solid #DDDDDD; margin: 4px 3px}
+.MathJax_MenuDisabled {color: GrayText}
+.MathJax_MenuActive {background-color: #606872; color: white}
+.MathJax_MenuDisabled:focus, .MathJax_MenuLabel:focus {background-color: #E8E8E8}
+.MathJax_ContextMenu:focus {outline: none}
+.MathJax_ContextMenu .MathJax_MenuItem:focus {outline: none}
+#MathJax_AboutClose {top: .2em; right: .2em}
+.MathJax_Menu .MathJax_MenuClose {top: -10px; left: -10px}
+.MathJax_MenuClose {position: absolute; cursor: pointer; display: inline-block; border: 2px solid #AAA; border-radius: 18px; -webkit-border-radius: 18px; -moz-border-radius: 18px; -khtml-border-radius: 18px; font-family: 'Courier New',Courier; font-size: 24px; color: #F0F0F0}
+.MathJax_MenuClose span {display: block; background-color: #AAA; border: 1.5px solid; border-radius: 18px; -webkit-border-radius: 18px; -moz-border-radius: 18px; -khtml-border-radius: 18px; line-height: 0; padding: 8px 0 6px}
+.MathJax_MenuClose:hover {color: white!important; border: 2px solid #CCC!important}
+.MathJax_MenuClose:hover span {background-color: #CCC!important}
+.MathJax_MenuClose:hover:focus {outline: none}
+</style><style type="text/css">#MathJax_Zoom {position: absolute; background-color: #F0F0F0; overflow: auto; display: block; z-index: 301; padding: .5em; border: 1px solid black; margin: 0; font-weight: normal; font-style: normal; text-align: left; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; -webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box; box-shadow: 5px 5px 15px #AAAAAA; -webkit-box-shadow: 5px 5px 15px #AAAAAA; -moz-box-shadow: 5px 5px 15px #AAAAAA; -khtml-box-shadow: 5px 5px 15px #AAAAAA; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+#MathJax_ZoomOverlay {position: absolute; left: 0; top: 0; z-index: 300; display: inline-block; width: 100%; height: 100%; border: 0; padding: 0; margin: 0; background-color: white; opacity: 0; filter: alpha(opacity=0)}
+#MathJax_ZoomFrame {position: relative; display: inline-block; height: 0; width: 0}
+#MathJax_ZoomEventTrap {position: absolute; left: 0; top: 0; z-index: 302; display: inline-block; border: 0; padding: 0; margin: 0; background-color: white; opacity: 0; filter: alpha(opacity=0)}
+</style></head>
+
+<body class="wy-body-for-nav"><div id="MathJax_Message" style="display: none;"></div>
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="http://codac.io/toctree.html" class="icon icon-home" alt="Documentation Home"> codac
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.5.5
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs">
+    <input type="hidden" name="check_keywords" value="yes">
+    <input type="hidden" name="area" value="default">
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="http://codac.io/index.html">Codac main page</a></li>
+<li class="toctree-l1"><a class="reference internal" href="http://codac.io/install/02-py-project-online.html">Try Codac online with Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="http://codac.io/install/01-installation.html">Installing the Codac library</a></li>
+<li class="toctree-l1"><a class="reference internal" href="http://codac.io/install/02-start-py-project.html">Start a Python project</a></li>
+<li class="toctree-l1 current"><a class="reference internal current" href="#">Start a C++ project</a></li>
+<li class="toctree-l1"><a class="reference internal" href="http://codac.io/install/04-start-matlab-project.html">Start a MATLAB project</a></li>
+</ul>
+<p class="caption"><span class="caption-text">User manual</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="http://codac.io/manual/01-introduction/index.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="http://codac.io/manual/02-variables/index.html">Basic structures for real values</a></li>
+<li class="toctree-l1"><a class="reference internal" href="http://codac.io/manual/03-domains/index.html">Domains: sets of feasible values</a></li>
+<li class="toctree-l1"><a class="reference internal" href="http://codac.io/manual/10-functions/index.html">Inclusion functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="http://codac.io/manual/04-static-contractors/index.html">Static contractors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="http://codac.io/manual/05-dynamic-contractors/index.html">Temporal contractors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="http://codac.io/manual/06-contractor-network/index.html">Contractor Networks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="http://codac.io/manual/11-separators/index.html">Set-inversion and separators</a></li>
+<li class="toctree-l1"><a class="reference internal" href="http://codac.io/manual/07-graphics/index.html">Graphical tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="http://codac.io/faq.html">FAQ: Frequently Asked Questions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="http://codac.io/dev/codac-unsupported.html">See also: codac-unsupported</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Set4MOST</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="http://codac.io/tutorial-set4most/01-examples/index.html">Examples</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Tutorial JNRR23</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="http://codac.io/tutorial-jnrr23/01-basics/index.html">JNRR-1. Intervals and contractors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="http://codac.io/tutorial-jnrr23/02-static-rangeonly/index.html">JNRR-2. Static range-only localization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="http://codac.io/tutorial-jnrr23/03-towards-slam/index.html">JNRR-3. Towards SLAM</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Tutorial for mobile robotics</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="http://codac.io/tutorial/index.html"><span class="toctree-expand"></span>Main page</a><ul class="">
+<li class="toctree-l2"><a class="reference internal" href="http://codac.io/tutorial/00-getting-started/index.html">Introduction to the concepts of CP and IA</a></li>
+<li class="toctree-l2"><a class="reference internal" href="http://codac.io/install/01-installation.html">Installing the Codac library</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://www.youtube.com/watch?v=ElV6xVVKhSg">[video] For C++, we advice to use the Qt Creator IDE, see how to use it for Codac</a></li>
+<li class="toctree-l2"><a class="reference internal" href="http://codac.io/install/02-start-py-project.html">Start a Python project</a></li>
+<li class="toctree-l2 current"><a class="reference internal current" href="#">Start a C++ project</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="http://codac.io/tutorial/00-getting-started/index.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="http://codac.io/tutorial/01-basics/index.html">A. Intervals and contractors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="http://codac.io/tutorial/02-static-rangeonly/index.html">B. Static range-only localization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="http://codac.io/tutorial/03-static-rangebearing/index.html">C. Static range-bearing localization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="http://codac.io/tutorial/04-own-contractor/index.html">D. Building our own contractor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="http://codac.io/tutorial/05-tubes/index.html">E. Hello tubes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="http://codac.io/tutorial/06-dyn-rangeonly/index.html">F. Asynchronous measurements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="http://codac.io/tutorial/07-data-association/index.html">G. Localization with data association</a></li>
+<li class="toctree-l1"><a class="reference internal" href="http://codac.io/tutorial/08-rangeonly-slam/index.html">H. Range-only SLAM</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Use cases</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="http://codac.io/use-cases/lie-symmetries/index.html">Lie symmetries for guaranteed integ.</a></li>
+<li class="toctree-l1"><a class="reference internal" href="http://codac.io/use-cases/brunovsky/index.html">Pose estimation with range-only obs.</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Development</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="http://codac.io/dev/changelog.html">Changelog</a></li>
+<li class="toctree-l1"><a class="reference internal" href="http://codac.io/dev/api_technical_doc.html">C++ API technical documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="http://codac.io/dev/info_dev.html">Information for developers</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="http://codac.io/toctree.html">codac</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="http://codac.io/toctree.html" class="icon icon-home"></a> »</li>
+        
+          <li><a href="http://codac.io/index.html">Codac: constraint-programming for robotics</a> »</li>
+        
+      <li>Start a C++ project</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="http://codac.io/_sources/install/03-start-cpp-project.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="start-a-c-project">
+<span id="sec-start-cpp-project"></span><h1>Start a C++ project<a class="headerlink" href="#start-a-c-project" title="Permalink to this headline">¶</a></h1>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<div class="line-block">
+<div class="line">You are using Python?</div>
+<div class="line"><a class="reference internal" href="http://codac.io/install/02-start-py-project.html#sec-start-py-project"><span class="std std-ref">Start a Python project</span></a></div>
+</div>
+</div>
+<div class="line-block">
+<div class="line">Codac is ready to be used on your computer.</div>
+<div class="line">You can now copy-paste the following example code in a file named <code class="file docutils literal notranslate"><span class="pre">main.cpp</span></code>:</div>
+</div>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;codac.h&gt;</span>
+
+<span class="k">using</span><span class="w"> </span><span class="k">namespace</span><span class="w"> </span><span class="nn">std</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="k">namespace</span><span class="w"> </span><span class="nn">codac</span><span class="p">;</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span>
+<span class="p">{</span>
+<span class="w">  </span><span class="n">Tube</span><span class="w"> </span><span class="n">x</span><span class="p">(</span><span class="n">Interval</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">10</span><span class="p">),</span><span class="w"> </span><span class="mf">0.01</span><span class="p">,</span><span class="w"> </span><span class="n">TFunction</span><span class="p">(</span><span class="s">"cos(t)+abs(t-5)*[-0.1,0.1]"</span><span class="p">));</span>
+
+<span class="w">  </span><span class="n">vibes</span><span class="o">::</span><span class="n">beginDrawing</span><span class="p">();</span>
+<span class="w">  </span><span class="n">VIBesFigTube</span><span class="w"> </span><span class="n">fig</span><span class="p">(</span><span class="s">"My first tube"</span><span class="p">);</span>
+<span class="w">  </span><span class="n">fig</span><span class="p">.</span><span class="n">add_tube</span><span class="p">(</span><span class="o">&amp;</span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="s">"x"</span><span class="p">);</span>
+<span class="w">  </span><span class="n">fig</span><span class="p">.</span><span class="n">show</span><span class="p">();</span>
+<span class="w">  </span><span class="n">vibes</span><span class="o">::</span><span class="n">endDrawing</span><span class="p">();</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>For the compilation of your project, you can use CMake with the following file <code class="file docutils literal notranslate"><span class="pre">CMakeLists.txt</span></code> that you will add in the same directory:</p>
+<div class="highlight-cmake notranslate"><div class="highlight"><pre><span></span><span class="w">  </span><span class="nb">cmake_minimum_required</span><span class="p">(</span><span class="s">VERSION</span><span class="w"> </span><span class="s">3.0.2</span><span class="p">)</span>
+<span class="w">  </span><span class="nb">project</span><span class="p">(</span><span class="s">my_project</span><span class="w"> </span><span class="s">LANGUAGES</span><span class="w"> </span><span class="s">CXX</span><span class="p">)</span>
+
+<span class="w">  </span><span class="nb">set</span><span class="p">(</span><span class="s">CMAKE_CXX_STANDARD</span><span class="w"> </span><span class="s">17</span><span class="p">)</span>
+<span class="w">  </span><span class="nb">set</span><span class="p">(</span><span class="s">CMAKE_CXX_STANDARD_REQUIRED</span><span class="w"> </span><span class="s">ON</span><span class="p">)</span>
+
+<span class="c"># Adding IBEX</span>
+
+<span class="w">  </span><span class="c"># In case you installed IBEX in a local directory, you need</span>
+<span class="w">  </span><span class="c"># to specify its path with the CMAKE_PREFIX_PATH option.</span>
+<span class="w">  </span><span class="c"># set(CMAKE_PREFIX_PATH "~/ibex-lib/build_install")</span>
+
+<span class="w">  </span><span class="nb">find_package</span><span class="p">(</span><span class="s">IBEX</span><span class="w"> </span><span class="s">REQUIRED</span><span class="p">)</span>
+<span class="w">  </span><span class="nb">ibex_init_common</span><span class="p">()</span><span class="w"> </span><span class="c"># IBEX should have installed this function</span>
+<span class="w">  </span><span class="nb">message</span><span class="p">(</span><span class="s">STATUS</span><span class="w"> </span><span class="s2">"Found IBEX version ${IBEX_VERSION}"</span><span class="p">)</span>
+
+<span class="c"># Adding Eigen3</span>
+
+<span class="w">  </span><span class="c"># In case you installed Eigen3 in a local directory, you need</span>
+<span class="w">  </span><span class="c"># to specify its path with the CMAKE_PREFIX_PATH option, e.g.</span>
+<span class="w">  </span><span class="c"># set(CMAKE_PREFIX_PATH "~/eigen/build_install")</span>
+
+<span class="w">  </span><span class="nb">find_package</span><span class="p">(</span><span class="s">Eigen3</span><span class="w"> </span><span class="s">REQUIRED</span><span class="w"> </span><span class="s">NO_MODULE</span><span class="p">)</span>
+<span class="w">  </span><span class="nb">message</span><span class="p">(</span><span class="s">STATUS</span><span class="w"> </span><span class="s2">"Found Eigen3 version ${Eigen3_VERSION}"</span><span class="p">)</span>
+
+<span class="c"># Adding Codac</span>
+
+<span class="w">  </span><span class="c"># In case you installed Codac in a local directory, you need</span>
+<span class="w">  </span><span class="c"># to specify its path with the CMAKE_PREFIX_PATH option.</span>
+<span class="w">  </span><span class="c"># set(CMAKE_PREFIX_PATH "~/codac/build_install")</span>
+
+<span class="w">  </span><span class="nb">find_package</span><span class="p">(</span><span class="s">CODAC</span><span class="w"> </span><span class="s">REQUIRED</span><span class="p">)</span>
+<span class="w">  </span><span class="nb">message</span><span class="p">(</span><span class="s">STATUS</span><span class="w"> </span><span class="s2">"Found Codac version ${CODAC_VERSION}"</span><span class="p">)</span>
+
+<span class="c"># Compilation</span>
+
+<span class="w">  </span><span class="nb">add_executable</span><span class="p">(</span><span class="o">${</span><span class="nv">PROJECT_NAME</span><span class="o">}</span><span class="w"> </span><span class="s">main.cpp</span><span class="p">)</span>
+<span class="w">  </span><span class="nb">target_compile_options</span><span class="p">(</span><span class="o">${</span><span class="nv">PROJECT_NAME</span><span class="o">}</span><span class="w"> </span><span class="s">PUBLIC</span><span class="w"> </span><span class="o">${</span><span class="nv">CODAC_CXX_FLAGS</span><span class="o">}</span><span class="p">)</span>
+<span class="w">  </span><span class="nb">target_include_directories</span><span class="p">(</span><span class="o">${</span><span class="nv">PROJECT_NAME</span><span class="o">}</span><span class="w"> </span><span class="s">SYSTEM</span><span class="w"> </span><span class="s">PUBLIC</span><span class="w"> </span><span class="o">${</span><span class="nv">CODAC_INCLUDE_DIRS</span><span class="o">}</span><span class="w"> </span><span class="o">${</span><span class="nv">EIGEN3_INCLUDE_DIRS</span><span class="o">}</span><span class="p">)</span>
+<span class="w">  </span><span class="nb">target_link_libraries</span><span class="p">(</span><span class="o">${</span><span class="nv">PROJECT_NAME</span><span class="o">}</span><span class="w"> </span><span class="s">PUBLIC</span><span class="w"> </span><span class="o">${</span><span class="nv">CODAC_LIBRARIES</span><span class="o">}</span><span class="w"> </span><span class="s">Ibex::ibex</span><span class="w"> </span><span class="o">${</span><span class="nv">CODAC_LIBRARIES</span><span class="o">}</span><span class="w"> </span><span class="s">Ibex::ibex</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>The files <code class="file docutils literal notranslate"><span class="pre">main.cpp</span></code> and <code class="file docutils literal notranslate"><span class="pre">CMakeLists.txt</span></code> appear in the same directory:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>my_project
+├──<span class="w"> </span>CMakeLists.txt
+└──<span class="w"> </span>main.cpp
+</pre></div>
+</div>
+<div class="admonition-custom-install-directory-of-ibex-and-codac admonition">
+<p class="admonition-title">Custom install directory of IBEX and Codac</p>
+<p>If you installed IBEX and/or Codac in a custom directory (instead of the file system such as <code class="file docutils literal notranslate"><span class="pre">/usr/local/</span></code> under Linux),
+then you need to specify the <code class="docutils literal notranslate"><span class="pre">CMAKE_PREFIX_PATH</span></code> option, as indicated in the above <code class="file docutils literal notranslate"><span class="pre">CMakeLists.txt</span></code> file.</p>
+<p>Another way is to export the <code class="docutils literal notranslate"><span class="pre">CMAKE_PREFIX_PATH</span></code> environment variable. For instance:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">export</span><span class="w"> </span><span class="nv">CMAKE_PREFIX_PATH</span><span class="o">=</span><span class="nv">$CMAKE_PREFIX_PATH</span>:<span class="nv">$HOME</span>/ibex-lib/build_install
+<span class="nb">export</span><span class="w"> </span><span class="nv">CMAKE_PREFIX_PATH</span><span class="o">=</span><span class="nv">$CMAKE_PREFIX_PATH</span>:<span class="nv">$HOME</span>/codac/build_install
+</pre></div>
+</div>
+</div>
+<p>The compilation of your project is made by the following command line:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>mkdir<span class="w"> </span>build<span class="w"> </span>-p<span class="w"> </span><span class="p">;</span><span class="w"> </span><span class="nb">cd</span><span class="w"> </span>build<span class="w"> </span><span class="p">;</span><span class="w"> </span>cmake<span class="w"> </span>..<span class="w"> </span><span class="p">;</span><span class="w"> </span>make<span class="w"> </span><span class="p">;</span><span class="w"> </span><span class="nb">cd</span><span class="w"> </span>..
+</pre></div>
+</div>
+<p>Lastly, the project can be run with:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>./build/my_project
+</pre></div>
+</div>
+<div class="line-block">
+<div class="line">This script will create a simple tube and display it.</div>
+<div class="line">In order to visualize the tube, you need to launch before the <a class="reference internal" href="http://codac.io/install/01-installation.html#sec-installation-graphics"><span class="std std-ref">VIBes viewer</span></a> independently.</div>
+</div>
+<p>If everything is well installed on your computer, you should see the following window appear:</p>
+<div class="figure align-default">
+<img alt="../_images/helloworld.png" src="Start%20a%20C++%20project%20%E2%80%94%20codac%201.5.5%20documentation_files/helloworld.png">
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="http://codac.io/manual/01-introduction/index.html" class="btn btn-neutral float-right" title="Introduction" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="http://codac.io/install/02-start-py-project.html" class="btn btn-neutral float-left" title="Start a Python project" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr>
+
+  <div role="contentinfo">
+    <p>
+        
+        © Copyright 2020, Codac Team
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org/">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+
+</body></html>
