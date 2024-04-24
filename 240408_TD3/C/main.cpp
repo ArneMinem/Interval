@@ -6,7 +6,7 @@ using namespace codac;
 int main()
 {
   // Truth (unknown pose)
-  Vector x_truth({2.,1.,M_PI/6}); // actual state vector (pose)
+  Vector x_truth({2., 1., M_PI/6}); // actual state vector (pose)
   Vector y({6,M_PI/6});
   Vector m({5,6.2});
 

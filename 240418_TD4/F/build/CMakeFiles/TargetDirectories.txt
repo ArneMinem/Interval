@@ -1,0 +1,4 @@
+/home/arne/interval/240418_TD4/F/build/CMakeFiles/uninstall.dir
+/home/arne/interval/240418_TD4/F/build/CMakeFiles/my_project.dir
+/home/arne/interval/240418_TD4/F/build/CMakeFiles/edit_cache.dir
+/home/arne/interval/240418_TD4/F/build/CMakeFiles/rebuild_cache.dir
