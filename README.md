@@ -1,6 +1,6 @@
 # SLAM
 
-In school, we had a fascinating course called "Interval Analysis" that delved into the world of SLAM (Simultaneous Localization and Mapping). If you're interested, you can find the course's website [here](https://simon-rohou.fr/temp/codac/) and my GitHub repository for the course [here](???).
+In school, we had a fascinating course called "Interval Analysis" that delved into the world of SLAM (Simultaneous Localization and Mapping). If you're interested, you can find the course's website [here](https://simon-rohou.fr/temp/codac/).
 
 ## What is SLAM?
 
